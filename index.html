@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.min.css">
+    <title>Weather</title>
+    <link rel="icon" href="./animation-ready/clear-day.svg">
+</head>
+<body>
+    <header>
+       <div class="container">
+        <form class="form">
+            <input type="search" class="searchInput" placeholder="Enter your city name...">
+        </form>
+       </div>
+    </header>
+    <main>
+        <section class="cities">
+            <div class="container">
+                <ul class="cities_list">
+                    
+                </ul>
+            </div>
+        </section>
+        <section class="infogram">
+            <div class="container">
+                <div class="infogram_box">
+                    <div class="infogram_left">
+                        
+                    </div>
+                    <div class="info_right hourly">
+                        <div class="hourly_mini-box">
+                            <span class="hourly_time-names"></span>
+                            <span class="hourly_time-names"></span>
+                            <span class="hourly_time-names"></span>
+                            <span class="hourly_time-names"></span>
+                        </div>
+                        <ul class="hourly_list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="daily">
+            <img class="hour_img" src="" alt="">
+            <div class="container">
+                <h4 class="daily_today" >TODAY</h4>
+                <ul class="daily_list">
+                    
+                    
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="footer_txt">© 2022 developer_773. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    <!-- TEMPLATES -->
+    
+    <template id="cities">
+        <li class="cities_item">
+            <div class="cities_box-left">
+                <p class="citiesCountry"></p>
+                <p class="cities_city">California</p>
+                <p class="cities_info"></p>
+            </div>
+            <div class="cities_box-right">
+                <img class="cities_info-icon" src="" width="45" height="45" alt="">
+                <strong class="cities_celcium">+25</strong>
+                <button class="cities_more-info">More info</button>
+            </div>
+        </li>
+    </template>
+
+    <template id="current">
+        <div class="infogram_left-box">
+            <div class="infogram_left-left">
+                <img class="infogram_current-weather-icon" src="" width="111" height="111" alt="Weather icon">
+                <p class="infogram_sunrise">Sunrise: </p>
+                <p class="infogram_sunset">Sunset: </p>
+            </div>
+            <div class="infogram_center">
+                <p class="infogram_date"></p>
+                <p class="infogram_celcium">
+                </p>
+                <span class="celcium">°C</span>
+                <p class="infogram_info"></p>
+                <p class="infogram_location"></p>
+            </div>
+            <div class="infogram_right">
+                <h4 class="infogram_right-title">MORE DETAILS:</h4>
+                <p> Wind speed:
+                    <strong class="infogram_wind"></strong>
+                </p>
+                <p>Air humidity:
+                    <strong class="infogram_humidity"></strong>
+                </p>
+                <p>Pressure:
+                    <strong class="infogram_pressure"></strong>
+                </p>
+            </div>
+        </div>
+    </template>
+    
+    <template id="hourly">
+        <li class="hourly_item">
+            <strong class="hourly_value">+17</strong>
+            <p class="hourly_time">18:00</p>
+        </li>
+    </template>
+    
+    <template id="daily">
+        <li class="daily_item">
+            <h4 class="daily_day"></h4>
+            <span class="daily_date">24 July</span>
+            <p>min:
+                <strong class="daily_min">+15</strong>
+            </p>
+            <p>max:
+                <strong class="daily_max">+18</strong>
+            </p>
+            <p class="daily_info">Cloudy</p>
+        </li>
+    </template>
+    
+    <script src="./js/app.min.js"></script>
+</body>
+</html>
