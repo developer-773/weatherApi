@@ -26,6 +26,10 @@ const fragment = document.createDocumentFragment();
 const dailyFragment = document.createDocumentFragment();
 
 
+let b = (1668737669 + 18000) * 1000
+
+console.log(new Date(b))
+
 // Weather icons fill mode 
 
 let dailyWeatherIcons = {
@@ -67,7 +71,7 @@ function displayaDailyDays(param) {
 }
 
 
-// Show daily weather icons
+// Show daily weather icons for presudo-elements (::before)
 
 function displayDailyWeatherIconShow(info, cloned, selectorClass, attr, url, els) {
     
@@ -106,7 +110,6 @@ function displayCurrentWeatherIconShow(info, cloned, selectorClass, els) {
 
 
 
-
 // Show other cities weathers
 
 async function citiesWeather(city) {
@@ -140,7 +143,6 @@ async function citiesWeather(city) {
 }
 
 
-
 // Current weather rendering 
 
 async function currentWeather(defaultt = "Tashkent") {
@@ -148,7 +150,6 @@ async function currentWeather(defaultt = "Tashkent") {
         
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${defaultt}&appid=${token}&units=metric`);
         const data = await response.json();
-        
         
         const sunrise = data.sys.sunrise;
         const sunset = data.sys.sunset;
@@ -162,7 +163,7 @@ async function currentWeather(defaultt = "Tashkent") {
             
             cloned.querySelector(".infogram_sunrise").textContent += getSuns(sunrise);
             cloned.querySelector(".infogram_sunset").textContent += getSuns(sunset);
-            cloned.querySelector(".infogram_date").textContent = `${displayaDailyDayNames(data.dt)} ${displayaDailyDays(data.dt)} ${new Date(data.dt * 1000).toTimeString().slice(0, 5)}`
+            cloned.querySelector(".infogram_date").textContent = `${displayaDailyDayNames(data.dt)} ${displayaDailyDays(data.dt)} ${new Date().toTimeString().slice(0, 5)}`
             cloned.querySelector(".infogram_celcium").textContent += Math.floor(data.main.temp);
             
             displayCurrentWeatherIconShow(weather[i].main, cloned, ".infogram_current-weather-icon", weather[0].icon)
@@ -184,7 +185,6 @@ async function currentWeather(defaultt = "Tashkent") {
     }
     
 }
-
 
 
 // Show daily && hourly weather
